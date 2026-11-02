@@ -1,5 +1,5 @@
-# برد وضعیت کار و سئو
+# برد وضعیت ثبتتو
 
-صفحهٔ زنده: https://mirzaila001-collab.github.io/client-status-board/
+آدرس: https://mirzaila001-collab.github.io/client-status-board/
 
-فقط همین صفحه اینجاست. ریپوی خانه خصوصی مانده.
+این ریپو فقط صفحهٔ ثبتتو است. برند دیگر اینجا نیست. ریپوی home خصوصی است.
