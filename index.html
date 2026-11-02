@@ -1,1 +1,595 @@
-<�s�D
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>برد وضعیت کار و سئو — ۱۱ آبان ۱۴۰۵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e2744;
+    --navy-2: #16365c;
+    --ink: #172033;
+    --muted: #5d6b7c;
+    --line: #dfe6ee;
+    --paper: #f3f6fa;
+    --card: #ffffff;
+    --up: #0d6b4a;
+    --up-bg: #e7f6ef;
+    --down: #8e2430;
+    --down-bg: #fdecee;
+    --hold: #7a5410;
+    --hold-bg: #fbf3df;
+    --soft: #e8eef6;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  a { color: var(--navy-2); }
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 28px;
+  }
+  .brand { font-weight: 800; letter-spacing: -0.02em; }
+  .brand span { font-weight: 500; opacity: .75; margin-right: 8px; }
+  .nav { display: flex; flex-wrap: wrap; gap: 6px; }
+  .nav button, .back {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,.25);
+    background: transparent;
+    color: #fff;
+    border-radius: 999px;
+    padding: 4px 12px;
+    cursor: pointer;
+  }
+  .nav button[aria-current="true"] { background: #fff; color: var(--navy); border-color: #fff; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 20px 80px; }
+  .kicker {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy-2);
+    margin: 0 0 8px;
+  }
+  h1 { font-size: 34px; line-height: 1.35; margin: 0 0 10px; letter-spacing: -0.03em; }
+  h2 { font-size: 22px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .lede { font-size: 17px; color: var(--muted); margin: 0 0 22px; max-width: 46rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .card, .block {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+  .card { padding: 16px 16px 14px; text-align: right; cursor: pointer; color: inherit; width: 100%; font: inherit; }
+  .card:hover { border-color: var(--navy-2); }
+  .card h2 { font-size: 20px; }
+  .card p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 2px 8px; }
+  .pill.down { background: var(--down-bg); color: var(--down); }
+  .pill.up { background: var(--up-bg); color: var(--up); }
+  .pill.hold { background: var(--hold-bg); color: var(--hold); }
+  .note {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: var(--soft);
+    color: var(--navy);
+    font-size: 14px;
+  }
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 20px;
+    padding: 28px 26px;
+    margin-bottom: 18px;
+  }
+  .hero h1 { font-size: 32px; }
+  .hero p { margin: 0; color: rgba(255,255,255,.82); font-size: 16px; max-width: 40rem; }
+  .sec { margin: 22px 0; }
+  .sec-no { font-size: 12px; font-weight: 800; color: var(--muted); letter-spacing: .08em; margin: 0 0 6px; }
+  .say {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.65;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .block { padding: 18px 18px 16px; overflow-x: auto; }
+  .block p { margin: 0; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+  .kpi { background: var(--paper); border-radius: 12px; padding: 12px; }
+  .kpi b { display: block; font-size: 22px; letter-spacing: -0.03em; }
+  .kpi span { display: block; color: var(--muted); font-size: 12px; font-weight: 600; }
+  .kpi em { font-style: normal; font-size: 12px; font-weight: 700; }
+  .up { color: var(--up); }
+  .down { color: var(--down); }
+  .hold { color: var(--hold); }
+  .bars { display: grid; gap: 8px; margin-top: 14px; }
+  .bar-row { display: grid; grid-template-columns: 148px 1fr 64px; gap: 8px; align-items: center; font-size: 13px; }
+  .track { background: var(--soft); border-radius: 999px; height: 10px; }
+  .fill { height: 10px; border-radius: 999px; background: var(--navy-2); }
+  .fill.now { background: var(--navy); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+  th, td { text-align: right; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.num, th.num { direction: ltr; unicode-bidi: isolate; text-align: center; font-variant-numeric: tabular-nums; }
+  th { color: var(--muted); font-size: 12px; font-weight: 700; }
+  ol.plan { margin: 8px 0 0; padding: 0 18px 0 0; }
+  ol.plan li { margin: 8px 0; }
+  .src { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .back { margin-top: 22px; background: var(--navy); }
+  @media (max-width: 800px) {
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .bar-row { grid-template-columns: 1fr; }
+    h1, .hero h1 { font-size: 26px; }
+    .say { font-size: 18px; }
+    .top { align-items: flex-start; flex-direction: column; }
+  }
+  @media print {
+    .top, .back, .note { display: none; }
+    body { background: #fff; }
+    .hero { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">برد وضعیت <span>۱۱ آبان ۱۴۰۵</span></div>
+  <nav class="nav" aria-label="برندها">
+    <button type="button" data-go="home" aria-current="true">فهرست</button>
+    <button type="button" data-go="sabteto">ثبتتو</button>
+    <button type="button" data-go="rajabi">رجبی</button>
+    <button type="button" data-go="admoon">آدمون</button>
+    <button type="button" data-go="nova">نواوکیل</button>
+    <button type="button" data-go="bransa">برنسا</button>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section data-view="home">
+    <p class="kicker">برای محمدعلی · هر برند یک صفحهٔ کامل برای کارفرما</p>
+    <h1>کارفرما برند خودش را باز می‌کند و از گذشته تا برنامهٔ بعدی را یک‌جا می‌خواند.</h1>
+    <p class="lede">این نسخه ۱۱ آبان ۱۴۰۵ است. عدد سئو از سرچ کنسول آمده، جست‌وجوی وب، تا ۸ آبان. صف کار همان قفل ۲۳ مرداد است. در پرونده، مورد بسته‌شده‌ای برای این برندها ثبت نشده؛ بخش «انجام‌شده» خالی مانده تا کار انجام‌نشده، انجام‌شده دیده نشود.</p>
+    <div class="grid">
+      <button class="card" type="button" data-go="sabteto">
+        <span class="pill down">افت سر جاست</span>
+        <h2>ثبتتو</h2>
+        <p>کلیک ماه آخر ۷۶ است و ۹٪ از ماه قبل بیشتر است. رتبه هنوز ۳۶ است. در تیر ۱۳۶ کلیک و رتبه ۲۰ بوده.</p>
+      </button>
+      <button class="card" type="button" data-go="rajabi">
+        <span class="pill down">ماه آخر پایین</span>
+        <h2>رجبی</h2>
+        <p>سایت اصلی از ۱٬۷۹۰ به ۱٬۵۶۱ کلیک رسیده و رتبه از ۱۶.۳ به ۱۷.۸ رفته. سایت ویزا از ۵۰ به ۲۹ کلیک رسیده.</p>
+      </button>
+      <button class="card" type="button" data-go="admoon">
+        <span class="pill hold">رتبه بهتر، کلیک کمتر</span>
+        <h2>آدمون</h2>
+        <p>رتبه ۱۶ است و از رتبه ۲۲ مرداد بهتر است. کلیک ماه آخر ۳۱۴ است، حدود ۳۰٪ کمتر از ماه قبل.</p>
+      </button>
+      <button class="card" type="button" data-go="nova">
+        <span class="pill hold">عدد کوچک</span>
+        <h2>نواوکیل</h2>
+        <p>۲۵ کلیک در ماه آخر. رتبه ۱۷. با این حجم، پیشرفت سئو روشن نیست.</p>
+      </button>
+      <button class="card" type="button" data-go="bransa">
+        <span class="pill hold">سئو وصل نیست</span>
+        <h2>برنسا</h2>
+        <p>این دامنه در دسترسی سرچ کنسول این نوبت نیست. کار باز، دبل‌چک پیلارکلاستر نیرو است.</p>
+      </button>
+    </div>
+    <div class="note">نوبت بعد همین فایل با سرچ کنسول و صف کار تازه می‌شود. این صفحه خودش هر ساعت نو نمی‌شود. ریپوهای جداگانهٔ سایت در این نوبت به لیست تحویل وصل نبودند.</div>
+  </section>
+
+  <section data-view="sabteto" hidden>
+    <article class="hero">
+      <p class="kicker" style="color:#9ec0e4">ثبتتو · sabteto.com</p>
+      <h1>افت مرداد برگشته نیست.</h1>
+      <p>ماه آخر فقط کمی از کف بالاتر آمده. رتبهٔ میانگین همچنان ۳۶ است.</p>
+    </article>
+
+    <section class="sec">
+      <p class="sec-no">۰۱ · گذشته</p>
+      <p class="say">از ۲۰ تیر تا ۱۶ مرداد سایت ۱۳۶ کلیک و رتبهٔ میانگین ۲۰ داشته. از ۱۷ مرداد رتبه به ۳۶ رسیده و کلیک به ۸۰ افت کرده. بعد از آن روی همین کف مانده است.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۲ · کار ثبت‌شده به‌عنوان انجام‌شده</p>
+      <div class="block"><p>از ۲۳ مرداد ۱۴۰۵ تا ۱۱ آبان، در پروندهٔ ثبتتو هیچ موردی بسته نشده است. تا وقتی کاری تمام و ثبت شود، این بخش خالی می‌ماند.</p></div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۳ · سئو · ۱۱ مهر تا ۸ آبان در برابر ۱۴ شهریور تا ۱۰ مهر</p>
+      <div class="block">
+        <p class="say" style="font-size:18px">پیشرفت این ماه، برگشت از افت نیست. کلیک و نمایش کمی بالا رفته و رتبه سر جایش است.</p>
+        <div class="kpis">
+          <div class="kpi"><span>کلیک</span><b>76</b><em class="up">+9٪ نسبت به ماه قبل</em></div>
+          <div class="kpi"><span>نمایش</span><b>5,240</b><em class="up">+10٪</em></div>
+          <div class="kpi"><span>نرخ کلیک</span><b>1.5٪</b><em class="hold">ثابت</em></div>
+          <div class="kpi"><span>رتبه میانگین · کمتر بهتر است</span><b>36.1</b><em class="hold">ثابت روی ۳۶</em></div>
+        </div>
+        <div class="bars" aria-label="کلیک ثبتتو در چهار پنجره ۲۸روزه">
+          <div class="bar-row"><span>۲۰ تیر تا ۱۶ مرداد</span><div class="track"><div class="fill" style="width:100%"></div></div><b>136</b></div>
+          <div class="bar-row"><span>۱۷ مرداد تا ۱۳ شهریور</span><div class="track"><div class="fill" style="width:59%"></div></div><b>80</b></div>
+          <div class="bar-row"><span>۱۴ شهریور تا ۱۰ مهر</span><div class="track"><div class="fill" style="width:51%"></div></div><b>70</b></div>
+          <div class="bar-row"><span>۱۱ مهر تا ۸ آبان</span><div class="track"><div class="fill now" style="width:56%"></div></div><b>76</b></div>
+        </div>
+        <p class="src">منبع: گوگل سرچ کنسول، جست‌وجوی وب. هر میله یک پنجرهٔ ۲۸روزه است و میلهٔ تیر برابر ۱۳۶ کلیک است.</p>
+        <table>
+          <caption class="src" style="text-align:right">کوئری‌های با بیشترین کلیک در ماه آخر. حجم هر کوئری کوچک است؛ جمع سایت را از کارت بالا بخوان.</caption>
+          <thead><tr><th>کوئری</th><th class="num">کلیک قبل</th><th class="num">کلیک حالا</th><th class="num">رتبه قبل</th><th class="num">رتبه حالا</th></tr></thead>
+          <tbody>
+            <tr><td>ثبت برند بدون کارخانه</td><td class="num">1</td><td class="num">3</td><td class="num">17.6</td><td class="num">19.2</td></tr>
+            <tr><td>ثبت برند رایگان</td><td class="num">4</td><td class="num">2</td><td class="num">7.4</td><td class="num">9.9</td></tr>
+            <tr><td>فروش مجوز گردشگری سلامت</td><td class="num">4</td><td class="num">2</td><td class="num">4.9</td><td class="num">5.0</td></tr>
+            <tr><td>ثبت شرکت</td><td class="num">1</td><td class="num">1</td><td class="num">46.2</td><td class="num">40.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۴ · کار باز</p>
+      <div class="block">
+        <ol class="plan">
+          <li>علت افت لایو بررسی شود. سایت جدید وارد این بررسی نمی‌شود.</li>
+          <li>دو سری چهارتایی: ثبت برند، و ثبت شرکت.</li>
+          <li>همان محتواها دوتا دوتا منتشر شوند.</li>
+          <li>سایت جدید: دیزاین تا مرحلهٔ انتشار، بعد انتقال محتوا.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۵ · آینده، کوتاه</p>
+      <p class="say">اول لایو: علت افت، بعد محتوا، بعد انتشار. سایت جدید مسیر جدا دارد و با درمان افت قاطی نمی‌شود.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۶ · آینده، با جزئیات</p>
+      <div class="block">
+        <ol class="plan">
+          <li>یک نشست فقط برای افت sabteto.com. خروجی باید علت محتمل باشد، نه حدس روی کاغذ.</li>
+          <li>هشت محتوا: چهار تا برای ثبت برند، چهار تا برای ثبت شرکت.</li>
+          <li>انتشار همان هشت تا، هر نوبت دو عدد، روی لایو.</li>
+          <li>بعد از مسیر لایو، دیزاین سایت جدید تا جایی که بشود منتشرش کرد و محتوا را برد.</li>
+          <li>نشانهٔ پیشرفت بعدی در سرچ کنسول: برگشت رتبه از حدود ۳۶ به سمت ۲۰، و کلیک بالاتر از کف ۷۰ تا ۸۰.</li>
+        </ol>
+        <p class="src">صف کار از قفل ۲۳ مرداد ۱۴۰۵. هنوز باز است.</p>
+      </div>
+    </section>
+    <button class="back" type="button" data-go="home">بازگشت به فهرست</button>
+  </section>
+
+  <section data-view="rajabi" hidden>
+    <article class="hero">
+      <p class="kicker" style="color:#9ec0e4">رجبی · rajabi.co و visarajaby.com</p>
+      <h1>ماه آخر هر دو سایت کلیک کمتری داشته.</h1>
+      <p>rajabi.co هنوز سایت اصلی جست‌وجوست. visarajaby کوچک است و رتبه‌اش هم عقب رفته.</p>
+    </article>
+
+    <section class="sec">
+      <p class="sec-no">۰۱ · گذشته</p>
+      <p class="say">rajabi.co در سه پنجرهٔ اخیر ۱٬۶۸۱ کلیک، بعد ۱٬۷۹۰، بعد ۱٬۵۶۱ کلیک داشته. رتبه از ۱۳.۹ به ۱۷.۸ رفته. visarajaby از ۵۲ کلیک و رتبه ۳۰ به ۲۹ کلیک و رتبه ۴۴ رسیده.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۲ · کار ثبت‌شده به‌عنوان انجام‌شده</p>
+      <div class="block"><p>از ۲۳ مرداد تا ۱۱ آبان، در پروندهٔ رجبی هیچ موردی بسته نشده است. المان بلاگ و انتشار پیش‌نویس هنوز در صف باز هستند.</p></div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۳ · سئو · ماه آخر در برابر ماه قبل</p>
+      <div class="block">
+        <h2>rajabi.co</h2>
+        <p>کلیک ۱۲.۸٪ کمتر شده، نمایش ۸.۸٪ کمتر، رتبه ۱.۵ پله ضعیف‌تر. این ماه پیشرفت نیست.</p>
+        <div class="kpis">
+          <div class="kpi"><span>کلیک</span><b>1,561</b><em class="down">−13٪</em></div>
+          <div class="kpi"><span>نمایش</span><b>43,970</b><em class="down">−9٪</em></div>
+          <div class="kpi"><span>نرخ کلیک</span><b>3.6٪</b><em class="down">از 3.7٪</em></div>
+          <div class="kpi"><span>رتبه · کمتر بهتر است</span><b>17.8</b><em class="down">از 16.3</em></div>
+        </div>
+        <div class="bars" aria-label="کلیک rajabi.co">
+          <div class="bar-row"><span>۱۷ مرداد تا ۱۳ شهریور</span><div class="track"><div class="fill" style="width:94%"></div></div><b>1,681</b></div>
+          <div class="bar-row"><span>۱۴ شهریور تا ۱۰ مهر</span><div class="track"><div class="fill" style="width:100%"></div></div><b>1,790</b></div>
+          <div class="bar-row"><span>۱۱ مهر تا ۸ آبان</span><div class="track"><div class="fill now" style="width:87%"></div></div><b>1,561</b></div>
+        </div>
+        <table>
+          <caption class="src" style="text-align:right">بزرگ‌ترین جابه‌جایی کلیک روی سایت اصلی. رتبهٔ ۱ مانده؛ جایی که کلیک ریخته، نمایش هم کمتر شده.</caption>
+          <thead><tr><th>کوئری</th><th class="num">کلیک قبل</th><th class="num">کلیک حالا</th><th class="num">رتبه قبل</th><th class="num">رتبه حالا</th></tr></thead>
+          <tbody>
+            <tr><td>مهاجرت ورزشی به داغستان</td><td class="num">55</td><td class="num">26</td><td class="num">1.0</td><td class="num">1.0</td></tr>
+            <tr><td>شرایط ازدواج با دختر روسی</td><td class="num">23</td><td class="num">6</td><td class="num">1.1</td><td class="num">1.0</td></tr>
+            <tr><td>حقوق کارگر در چین به دلار</td><td class="num">21</td><td class="num">34</td><td class="num">1.2</td><td class="num">1.0</td></tr>
+            <tr><td>حقوق کارگر در چین</td><td class="num">13</td><td class="num">25</td><td class="num">2.2</td><td class="num">1.4</td></tr>
+            <tr><td>موسسه مهاجرتی رجبی</td><td class="num">12</td><td class="num">20</td><td class="num">5.5</td><td class="num">2.6</td></tr>
+          </tbody>
+        </table>
+        <p>کوئری برند «موسسه مهاجرتی رجبی» بهتر شده: رتبه ۵.۵ به ۲.۶ و کلیک ۱۲ به ۲۰. افت کلیک صفحهٔ داغستان و ازدواج با رتبهٔ ۱ همراه است و نمایششان هم کم شده؛ یعنی تقاضا کمتر شده، نه اینکه آن صفحه از صفحهٔ اول حذف شده باشد.</p>
+      </div>
+      <div class="block" style="margin-top:12px">
+        <h2>visarajaby.com</h2>
+        <p>کلیک ۴۲٪ کمتر شده. نمایش تقریباً ثابت است و رتبه از ۳۹ به ۴۴ رفته. اینجا هم افت رتبه هست هم افت کلیک.</p>
+        <div class="kpis">
+          <div class="kpi"><span>کلیک</span><b>29</b><em class="down">−42٪</em></div>
+          <div class="kpi"><span>نمایش</span><b>2,590</b><em class="hold">−2٪</em></div>
+          <div class="kpi"><span>نرخ کلیک</span><b>1.1٪</b><em class="down">از 1.9٪</em></div>
+          <div class="kpi"><span>رتبه · کمتر بهتر است</span><b>44.4</b><em class="down">از 39.1</em></div>
+        </div>
+        <div class="bars" aria-label="کلیک visarajaby">
+          <div class="bar-row"><span>۱۷ مرداد تا ۱۳ شهریور</span><div class="track"><div class="fill" style="width:100%"></div></div><b>52</b></div>
+          <div class="bar-row"><span>۱۴ شهریور تا ۱۰ مهر</span><div class="track"><div class="fill" style="width:96%"></div></div><b>50</b></div>
+          <div class="bar-row"><span>۱۱ مهر تا ۸ آبان</span><div class="track"><div class="fill now" style="width:56%"></div></div><b>29</b></div>
+        </div>
+        <p class="src">منبع: گوگل سرچ کنسول، جست‌وجوی وب، برای هر دو دامنهٔ رجبی.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۴ · کار باز</p>
+      <div class="block">
+        <ol class="plan">
+          <li>المان نیرو ادز روی صفحات بلاگ، زودتر از بقیه.</li>
+          <li>پیش‌نویس‌ها منتشر شوند؛ هر نشست سه تا چهار عدد.</li>
+          <li>خواندن سرچ کنسول برای KPI تمرکز محتوا، بعد از این دو کار.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۵ · آینده، کوتاه</p>
+      <p class="say">بلاگ زنده جلوتر از گزارش است. اول المان و انتشار. عدد سرچ کنسول را بعد از آن به KPI محتوا وصل می‌کنیم.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۶ · آینده، با جزئیات</p>
+      <div class="block">
+        <ol class="plan">
+          <li>روی بلاگ سایت زنده، المان دیزاین نیرو ادز قرار بگیرد. این کار از ساخت سایت جدید جداست.</li>
+          <li>صف پیش‌نویس باز شود و در هر نشست سه یا چهار مطلب منتشر شود.</li>
+          <li>بعد از این دو، یک دور سرچ کنسول فقط برای اینکه معلوم شود محتوا روی کدام کوئری‌ها باید بماند.</li>
+          <li>نشانهٔ ماه بعد: توقف افت کلیک rajabi.co، و نگه داشتن کوئری برند اطراف رتبهٔ ۳ یا بهتر.</li>
+        </ol>
+        <p class="src">صف کار از قفل ۲۳ مرداد ۱۴۰۵. هنوز باز است.</p>
+      </div>
+    </section>
+    <button class="back" type="button" data-go="home">بازگشت به فهرست</button>
+  </section>
+
+  <section data-view="admoon" hidden>
+    <article class="hero">
+      <p class="kicker" style="color:#9ec0e4">آدمون · admoon.agency</p>
+      <h1>رتبه از مرداد بهتر است. کلیک ماه آخر نیست.</h1>
+      <p>نمایش ماه آخر تقریباً مثل ماه قبل است. چیزی که ریخته، نرخ کلیک است.</p>
+    </article>
+
+    <section class="sec">
+      <p class="sec-no">۰۱ · گذشته</p>
+      <p class="say">از ۱۷ مرداد تا ۱۳ شهریور سایت ۴۷۰ کلیک و رتبهٔ ۲۲ داشته. ماه بعد رتبه به ۱۵.۶ رسیده و کلیک ۴۴۸ مانده، ولی نمایش از ۵۴ هزار به ۳۲ هزار افت کرده. ماه آخر کلیک ۳۱۴ شده و رتبه ۱۶ مانده.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۲ · کار ثبت‌شده به‌عنوان انجام‌شده</p>
+      <div class="block"><p>از ۲۳ مرداد تا ۱۱ آبان، در پروندهٔ admoon.agency هیچ مورد بسته‌شده‌ای نیست. انتشار بلاگ هنوز باز است.</p></div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۳ · سئو · ماه آخر در برابر ماه قبل</p>
+      <div class="block">
+        <p class="say" style="font-size:18px">پیشرفت رتبه نسبت به مرداد هست. پیشرفت کلیک در ماه آخر نیست: حدود ۳۰٪ کمتر.</p>
+        <div class="kpis">
+          <div class="kpi"><span>کلیک</span><b>314</b><em class="down">−30٪</em></div>
+          <div class="kpi"><span>نمایش</span><b>31,739</b><em class="hold">−1٪</em></div>
+          <div class="kpi"><span>نرخ کلیک</span><b>1.0٪</b><em class="down">از 1.4٪</em></div>
+          <div class="kpi"><span>رتبه · کمتر بهتر است</span><b>16.0</b><em class="hold">از 15.6 · مرداد ۲۱.۹ بود</em></div>
+        </div>
+        <div class="bars" aria-label="کلیک admoon.agency">
+          <div class="bar-row"><span>۱۷ مرداد تا ۱۳ شهریور</span><div class="track"><div class="fill" style="width:100%"></div></div><b>470</b></div>
+          <div class="bar-row"><span>۱۴ شهریور تا ۱۰ مهر</span><div class="track"><div class="fill" style="width:95%"></div></div><b>448</b></div>
+          <div class="bar-row"><span>۱۱ مهر تا ۸ آبان</span><div class="track"><div class="fill now" style="width:67%"></div></div><b>314</b></div>
+        </div>
+        <table>
+          <caption class="src" style="text-align:right">بزرگ‌ترین جابه‌جایی کلیک. رتبهٔ کوئری اصلی بهتر شده و نرخ کلیکش ریخته.</caption>
+          <thead><tr><th>کوئری</th><th class="num">کلیک قبل</th><th class="num">کلیک حالا</th><th class="num">رتبه قبل</th><th class="num">رتبه حالا</th><th class="num">نرخ قبل</th><th class="num">نرخ حالا</th></tr></thead>
+          <tbody>
+            <tr><td class="num">google ads agency dubai</td><td class="num">41</td><td class="num">13</td><td class="num">5.4</td><td class="num">4.1</td><td class="num">3.2%</td><td class="num">0.9%</td></tr>
+            <tr><td class="num">google ads agency in dubai</td><td class="num">21</td><td class="num">14</td><td class="num">6.0</td><td class="num">5.1</td><td class="num">2.9%</td><td class="num">2.1%</td></tr>
+            <tr><td class="num">admoon google ads agency dubai</td><td class="num">16</td><td class="num">5</td><td class="num">1.1</td><td class="num">2.2</td><td class="num">67%</td><td class="num">25%</td></tr>
+            <tr><td class="num">buy google ads account</td><td class="num">19</td><td class="num">9</td><td class="num">6.2</td><td class="num">6.9</td><td class="num">6.2%</td><td class="num">2.8%</td></tr>
+            <tr><td class="num">admoon</td><td class="num">18</td><td class="num">23</td><td class="num">6.6</td><td class="num">3.1</td><td class="num">5.1%</td><td class="num">10.8%</td></tr>
+          </tbody>
+        </table>
+        <p class="src">منبع: گوگل سرچ کنسول، جست‌وجوی وب، فقط دامنهٔ اصلی آژانس. دامنه‌های دیگر آدمون در این صفحه نیست.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۴ · کار باز</p>
+      <div class="block">
+        <ol class="plan">
+          <li>محتوای آماده روی بلاگ بارگذاری و منتشر شود. ساختار و عنوان سایت اصلی در این کار عوض نمی‌شود.</li>
+          <li>همان دامنه در سرچ کنسول دوره به دوره خوانده شود.</li>
+          <li>اگر عنوان یا ساختار صفحهٔ اصلی باید عوض شود، اول مستند برای تیم فنی، بعد از تأیید کارفرما.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۵ · آینده، کوتاه</p>
+      <p class="say">دست باز، بلاگ همین دامنه است. صفحهٔ اصلی را مستقیم دست نمی‌زنیم. کلیک وقتی برمی‌گردد که نرخ کلیک کوئری‌های صفحهٔ اول ترمیم شود.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۶ · آینده، با جزئیات</p>
+      <div class="block">
+        <ol class="plan">
+          <li>یک نشست انتشار فقط برای بلاگ admoon.agency. سایت‌های net و ae و ca و uk داخل این کار نیستند.</li>
+          <li>عنوان نتیجهٔ گوگل برای google ads agency dubai جدا دیده شود، چون رتبه بهتر شده و نرخ کلیک از ۳.۲٪ به ۰.۹٪ رسیده.</li>
+          <li>کوئری برند admoon که رتبهٔ ۳ و کلیک بیشتر دارد، الگو برای بقیه بماند.</li>
+          <li>مستند صفحهٔ اصلی، اگر لازم شد، برای تیم فنی نوشته شود و قبل از تأیید اجرا نشود.</li>
+          <li>نشانهٔ ماه بعد: کلیک بالاتر از ۳۱۴، بدون پس دادن رتبهٔ حدود ۱۶.</li>
+        </ol>
+        <p class="src">صف کار از قفل ۲۳ مرداد ۱۴۰۵. هنوز باز است.</p>
+      </div>
+    </section>
+    <button class="back" type="button" data-go="home">بازگشت به فهرست</button>
+  </section>
+
+  <section data-view="nova" hidden>
+    <article class="hero">
+      <p class="kicker" style="color:#9ec0e4">نواوکیل · vakilnova.com</p>
+      <h1>با این حجم کلیک، پیشرفت سئو هنوز روشن نیست.</h1>
+      <p>ماه آخر ۲۵ کلیک است. رتبه کمی بهتر شده و کلیک کمتر.</p>
+    </article>
+
+    <section class="sec">
+      <p class="sec-no">۰۱ · گذشته</p>
+      <p class="say">سه پنجره: ۲۶ کلیک با رتبه ۱۲، بعد ۳۳ کلیک با رتبه ۱۹، بعد ۲۵ کلیک با رتبه ۱۷. جهت ثابتی در کلیک دیده نمی‌شود.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۲ · کار ثبت‌شده به‌عنوان انجام‌شده</p>
+      <div class="block"><p>از ۲۳ مرداد تا ۱۱ آبان، در پروندهٔ نواوکیل هیچ موردی بسته نشده است. فرم هنوز به تأیید و بعد به سایت نرسیده.</p></div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۳ · سئو · ماه آخر در برابر ماه قبل</p>
+      <div class="block">
+        <p>کلیک ۲۴٪ کمتر، نمایش ۸٪ بیشتر، رتبه از ۱۹.۳ به ۱۶.۷. بهتر شدن رتبه روی ۲۵ کلیک را پیشرفت حساب نمی‌کنیم.</p>
+        <div class="kpis">
+          <div class="kpi"><span>کلیک</span><b>25</b><em class="down">−24٪</em></div>
+          <div class="kpi"><span>نمایش</span><b>1,586</b><em class="up">+8٪</em></div>
+          <div class="kpi"><span>نرخ کلیک</span><b>1.6٪</b><em class="down">از 2.2٪</em></div>
+          <div class="kpi"><span>رتبه · کمتر بهتر است</span><b>16.7</b><em class="up">از 19.3</em></div>
+        </div>
+        <div class="bars" aria-label="کلیک vakilnova">
+          <div class="bar-row"><span>۱۷ مرداد تا ۱۳ شهریور</span><div class="track"><div class="fill" style="width:79%"></div></div><b>26</b></div>
+          <div class="bar-row"><span>۱۴ شهریور تا ۱۰ مهر</span><div class="track"><div class="fill" style="width:100%"></div></div><b>33</b></div>
+          <div class="bar-row"><span>۱۱ مهر تا ۸ آبان</span><div class="track"><div class="fill now" style="width:76%"></div></div><b>25</b></div>
+        </div>
+        <p class="src">منبع: گوگل سرچ کنسول، جست‌وجوی وب. کوئری‌های این سایت در حد صفر و یک کلیک‌اند و جدولشان تصمیم نمی‌سازد.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۴ · کار باز</p>
+      <div class="block">
+        <ol class="plan">
+          <li>فیلدهای فرم، مکتوب، برای همهٔ دسته‌ها. بعد تأیید. بعد فرم روی سایت.</li>
+          <li>ساختار خدمات، منو، و سرویس‌ها.</li>
+          <li>کیورد کمپین ادز، برای تأیید.</li>
+          <li>تحقیق نام جدید برند، آخر همین صف.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۵ · آینده، کوتاه</p>
+      <p class="say">اول فرم مکتوب و تأیید. بعد منو و خدمات. ادز بعد از این دو. اسم برند همین حالا عوض نمی‌شود.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۶ · آینده، با جزئیات</p>
+      <div class="block">
+        <ol class="plan">
+          <li>یک فایل فیلد و منطق فرم که برای دسته‌های مختلف کار کند. تا قبل از تأیید، فرم زنده ساخته نمی‌شود.</li>
+          <li>بعد از تأیید، همان فرم روی سایت می‌نشیند.</li>
+          <li>نقشهٔ خدمات و منو با همین اسم فعلی بسته شود.</li>
+          <li>لیست کیورد ادز برای تأیید آماده شود.</li>
+          <li>تحقیق نام جدید وقتی این سه تا تمام شد.</li>
+          <li>نشانهٔ سئو، تا وقتی سایت و فرم جمع شود، کلیک پایدار بالای این کف ۲۵تایی است. زودتر از آن عدد را رشد حساب نمی‌کنیم.</li>
+        </ol>
+        <p class="src">صف کار از قفل ۲۳ مرداد ۱۴۰۵. هنوز باز است.</p>
+      </div>
+    </section>
+    <button class="back" type="button" data-go="home">بازگشت به فهرست</button>
+  </section>
+
+  <section data-view="bransa" hidden>
+    <article class="hero">
+      <p class="kicker" style="color:#9ec0e4">برنسا · bransa.agency</p>
+      <h1>کار این دور، دبل‌چک خروجی نیرو است.</h1>
+      <p>عدد سرچ کنسول این دامنه روی دسترسی این نوبت نیست.</p>
+    </article>
+
+    <section class="sec">
+      <p class="sec-no">۰۱ · گذشته</p>
+      <p class="say">۲۳ مرداد قرار شد پیلارکلاستری که نیرو ساخته دبل‌چک شود. ساختن پیلار از صفر، کار این مرحله نیست.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۲ · کار ثبت‌شده به‌عنوان انجام‌شده</p>
+      <div class="block"><p>از ۲۳ مرداد تا ۱۱ آبان، در پروندهٔ برنسا هیچ موردی بسته نشده است.</p></div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۳ · سئو</p>
+      <div class="block"><p>bransa.agency در فهرست سرچ کنسول این دسترسی نیست. برای این برند عدد کلیک و رتبه در این برد نمی‌آید. اگر دسترسی اضافه شود، همین بخش با دو پنجرهٔ ۲۸روزه پر می‌شود.</p></div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۴ · کار باز</p>
+      <div class="block">
+        <ol class="plan">
+          <li>خروجی پیلارکلاستر نیرو باز شود و دبل‌چک شود: چه ساخته‌اند و کجا با سایت نمی‌خواند.</li>
+          <li>بقیهٔ تسک‌های باز همین برند یک دور مرور شود.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۵ · آینده، کوتاه</p>
+      <p class="say">اول روشن شود نیرو چه تحویل داده. ساخت جدید، اگر لازم شد، بعد از همین دبل‌چک است.</p>
+    </section>
+
+    <section class="sec">
+      <p class="sec-no">۰۶ · آینده، با جزئیات</p>
+      <div class="block">
+        <ol class="plan">
+          <li>فایل یا خروجی پیلارکلاستر نیرو باز شود.</li>
+          <li>برای هر پیلار: موضوع، خوشه‌ها، و صفحه‌ای که باید روی bransa.agency بنشیند نوشته شود.</li>
+          <li>جاهایی که خروجی با سایت فعلی نمی‌خواند جدا شود.</li>
+          <li>تسک‌های دیگر همین برند فهرست شود تا کار تکراری یا رهاشده معلوم شود.</li>
+          <li>سرچ کنسول وقتی دسترسی دامنه باشد به همین صفحه اضافه می‌شود. تا آن وقت عدد ساخته نمی‌شود.</li>
+        </ol>
+        <p class="src">صف کار از قفل ۲۳ مرداد ۱۴۰۵. هنوز باز است.</p>
+      </div>
+    </section>
+    <button class="back" type="button" data-go="home">بازگشت به فهرست</button>
+  </section>
+</main>
+<script>
+  const buttons = document.querySelectorAll("[data-go]");
+  const views = document.querySelectorAll("[data-view]");
+  function show(id) {
+    const known = ["home","sabteto","rajabi","admoon","nova","bransa"];
+    if (!known.includes(id)) id = "home";
+    views.forEach((view) => { view.hidden = view.dataset.view !== id; });
+    document.querySelectorAll("nav [data-go]").forEach((btn) => {
+      btn.setAttribute("aria-current", btn.dataset.go === id ? "true" : "false");
+    });
+    if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id);
+    window.scrollTo(0, 0);
+  }
+  buttons.forEach((btn) => btn.addEventListener("click", () => show(btn.dataset.go)));
+  show((location.hash || "#home").slice(1));
+  window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b52b6f4d299f4a5c9db542181e188c9f","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
